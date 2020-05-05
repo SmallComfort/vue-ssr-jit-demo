@@ -14,10 +14,10 @@ If you use `serverPrefetch` to get the data, you don't need to make any changes,
 ## Performance
 Here's a simple statistic on how long it takes to render
 
-Unoptimized
+#### Unoptimized
 ![before](/material/before.png)
 
-Optimized
+#### Optimized
 ![after](/material/after.png)
 
 
