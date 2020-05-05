@@ -50,3 +50,33 @@ export default context => {
     }, reject)
   })
 }
+
+export const base = (context) => {
+  return new Promise((resolve, reject) => {
+    const { app, router } = createApp()
+
+    const { url } = context
+    const { fullPath } = router.resolve(url).route
+
+    if (fullPath !== url) {
+      return reject({ url: fullPath })
+    }
+
+    // set router's location
+    router.push(url)
+
+    // wait until router has resolved possible async hooks
+    router.onReady(() => {
+      const matchedComponents = router.getMatchedComponents()
+      // no matched routes
+      if (!matchedComponents.length) {
+        return reject({ code: 404 })
+      }
+      // Call fetchData hooks on components matched by the route.
+      // A preFetch hook dispatches a store action and returns a Promise,
+      // which is resolved when the action is complete and store state has been
+      // updated.
+      resolve(app)
+    }, reject)
+  })
+}

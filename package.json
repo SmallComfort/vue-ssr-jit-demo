@@ -29,7 +29,8 @@
     "vue-router": "^3.0.1",
     "vue-server-renderer": "^2.5.22",
     "vuex": "^3.0.1",
-    "vuex-router-sync": "^5.0.0"
+    "vuex-router-sync": "^5.0.0",
+    "vue-ssr-jit": "^0.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
