@@ -1,7 +1,5 @@
 # vue-ssr-jit-demo
-A streamlined HackNews project to demonstrate the vue-ssr-jit
-
-> To see the difference more clearly, we removed the web request from the project
+A streamlined HackNews project to demonstrate the vue-ssr-jit. To see the difference more clearly, we removed the web request from the project
 
 ##  There are two ways to get asynchronous data
 
