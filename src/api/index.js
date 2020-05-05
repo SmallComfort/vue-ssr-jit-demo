@@ -42,9 +42,10 @@ function fetch (child) {
 }
 
 export function fetchIdsByType (type) {
-  return api.cachedIds && api.cachedIds[type]
-    ? Promise.resolve(api.cachedIds[type])
-    : fetch(`${type}stories`)
+  // return api.cachedIds && api.cachedIds[type]
+  //   ? Promise.resolve(api.cachedIds[type])
+  //   : fetch(`${type}stories`)
+  return Promise.resolve(['1'])
 }
 
 export function fetchItem (id) {
@@ -52,7 +53,14 @@ export function fetchItem (id) {
 }
 
 export function fetchItems (ids) {
-  return Promise.all(ids.map(id => fetchItem(id)))
+  // return Promise.all(ids.map(id => fetchItem(id)))
+  return Promise.resolve([{
+    id: '1',
+    score: 'score',
+    title: 'title',
+    time: 'time',
+    descendants: 'descendants'
+  }])
 }
 
 export function fetchUser (id) {
